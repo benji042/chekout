@@ -5,7 +5,7 @@ export default function App () {
   return (
     <>
       <div className="container">
-        <ASAP amount={1000} currency="NGN" />
+        <ASAP amount={2500} currency="NGN" />
       </div>
     </>
   )
