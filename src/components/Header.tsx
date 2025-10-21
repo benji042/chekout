@@ -13,7 +13,7 @@ export function Header({ cartCount, onCartClick, searchQuery, onSearchChange }: 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
-            <h1 className="text-2xl font-bold text-gray-900">StyleHub</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Chekout</h1>
             <nav className="hidden md:flex space-x-6">
               <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
                 New Arrivals
