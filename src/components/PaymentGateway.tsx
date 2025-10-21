@@ -7,6 +7,8 @@ interface PaymentGatewayProps {
   cartTotal: number;
 }
 
+const secretKey = import.meta.env.VITE_ASAP_SECRET_KEY;
+
 export function PaymentGateway({
     isOpen,
     onClose,
@@ -43,7 +45,13 @@ export function PaymentGateway({
                                 Pay with Bank Transfer
                             </button>
 
-                            <ASAP currency='NGN' amount={cartTotal} bgColor='#111828' textColor='#ffffff' />
+                            <ASAP
+                                secretKey={secretKey}
+                                currency='NGN'
+                                amount={cartTotal}
+                                bgColor='#111828'
+                                textColor='#ffffff'
+                            />
                         </div>
 
                         <div className="">
