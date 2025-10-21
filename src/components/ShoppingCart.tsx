@@ -101,7 +101,7 @@ export function ShoppingCart({
                         </div>
                         <div className="flex items-center space-x-3">
                           <span className="font-bold text-gray-900">
-                            ${(Number(item.products?.price) * item.quantity).toFixed(2)}
+                            &#8358;{(Number(item.products?.price) * item.quantity).toFixed(2)}
                           </span>
                           <button
                             onClick={() => onRemoveItem(item.id)}
@@ -121,7 +121,7 @@ export function ShoppingCart({
               <div className="flex items-center justify-between text-lg">
                 <span className="font-semibold text-gray-900">Subtotal:</span>
                 <span className="font-bold text-2xl text-gray-900">
-                  ${cartTotal.toFixed(2)}
+                  &#8358;{cartTotal.toFixed(2)}
                 </span>
               </div>
 

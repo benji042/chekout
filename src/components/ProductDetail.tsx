@@ -78,7 +78,7 @@ export function ProductDetail({ product, onClose, onAddToCart }: ProductDetailPr
                 {product.name}
               </h1>
               <p className="text-4xl font-bold text-gray-900 mb-4">
-                ${Number(product.price).toFixed(2)}
+                &#8358;{Number(product.price).toFixed(2)}
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {product.description}

@@ -43,7 +43,7 @@ export function PaymentGateway({
                                 Pay with Bank Transfer
                             </button>
 
-                            <ASAP currency='NGN' amount={10000} bgColor='#000000' textColor='#ffffff' />
+                            <ASAP currency='NGN' amount={cartTotal} bgColor='#111828' textColor='#ffffff' />
                         </div>
 
                         <div className="">
@@ -60,7 +60,7 @@ export function PaymentGateway({
                     <div className="flex items-center justify-between text-lg">
                         <span className="font-semibold text-gray-900">Subtotal:</span>
                         <span className="font-bold text-2xl text-gray-900">
-                            ${cartTotal.toFixed(2)}
+                            &#8358;{cartTotal.toFixed(2)}
                         </span>
                     </div>
                 </div>

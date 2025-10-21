@@ -37,7 +37,7 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
         </p>
         <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-gray-900">
-            ${Number(product.price).toFixed(2)}
+            &#8358;{Number(product.price).toFixed(2)}
           </span>
           {product.colors.length > 0 && (
             <div className="flex gap-1">
