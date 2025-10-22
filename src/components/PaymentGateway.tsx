@@ -1,10 +1,13 @@
-import { ASAP } from '@asap-crypto/react-sdk';
+import { ASAP, useASAP } from '@asap-crypto/react-sdk';
 import { X, CreditCard } from 'lucide-react';
+import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 interface PaymentGatewayProps {
   isOpen: boolean;
-  onClose: () => void; 
+  onClose: () => void;
   cartTotal: number;
+  onClearCart: () => void; 
 }
 
 const secretKey = import.meta.env.VITE_ASAP_SECRET_KEY;
@@ -12,8 +15,23 @@ const secretKey = import.meta.env.VITE_ASAP_SECRET_KEY;
 export function PaymentGateway({
     isOpen,
     onClose,
-    cartTotal
+    cartTotal,
+    onClearCart
 }: PaymentGatewayProps) {
+    const { transaction } = useASAP();
+
+    useEffect(() => {
+        if(transaction.status === "success") {
+            console.log(`In App: ${transaction}`);
+
+            toast.success("Transaction successful");
+
+            onClearCart();
+
+            onClose();
+        }
+    }, [transaction])
+
     if (!isOpen) return null;
 
     return (

@@ -97,6 +97,7 @@ function App() {
         isOpen={isGatewayOpen}
         onClose={() => setIsGatewayOpen(false)}
         cartTotal={cartTotal}
+        onClearCart={clearCart}
       />
     </div>
   );

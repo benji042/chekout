@@ -13,11 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@asap-crypto/react-sdk": "^0.2.7",
+    "@asap-crypto/react-sdk": "^0.2.8",
     "@supabase/supabase-js": "^2.57.4",
     "lucide-react": "^0.344.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
