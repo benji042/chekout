@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@asap-crypto/react-sdk": "^0.2.5",
+    "@asap-crypto/react-sdk": "^0.2.6",
     "@supabase/supabase-js": "^2.57.4",
     "lucide-react": "^0.344.0",
     "react": "^19.1.1",
