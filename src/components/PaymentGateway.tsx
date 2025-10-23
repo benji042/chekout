@@ -28,7 +28,7 @@ export function PaymentGateway({
                 onClearCart();
 
                 onClose();
-            }, 3000);
+            }, 5000);
         }
     }, [transaction])
 
