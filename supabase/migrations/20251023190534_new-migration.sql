@@ -223,7 +223,7 @@ SELECT
   c.id,
   'Comfortable Sneakers',
   'Versatile sneakers for daily wear. Lightweight and breathable design.',
-  7000.00,
+  2500.00,
   'https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg?auto=compress&cs=tinysrgb&w=800',
   ARRAY['5', '6', '7', '8', '9', '10'],
   ARRAY['White', 'Pink', 'Black', 'Blue'],

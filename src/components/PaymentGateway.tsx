@@ -22,13 +22,13 @@ export function PaymentGateway({
 
     useEffect(() => {
         if(transaction.status === "success") {
-            console.log(`In App: ${transaction}`);
+            setTimeout(() => {
+                toast.success("Transaction successful");
 
-            toast.success("Transaction successful");
+                onClearCart();
 
-            onClearCart();
-
-            onClose();
+                onClose();
+            }, 3000);
         }
     }, [transaction])
 
