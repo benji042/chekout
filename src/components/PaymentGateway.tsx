@@ -22,12 +22,9 @@ export function PaymentGateway({
 
     useEffect(() => {
         if(transaction.status === "success") {
+            toast.success("Transaction successful");
             setTimeout(() => {
-                toast.success("Transaction successful");
-
                 onClearCart();
-
-                onClose();
             }, 5000);
         }
     }, [transaction])
@@ -52,7 +49,11 @@ export function PaymentGateway({
                     </button>
                 </div>
 
-                <div className="flex-1 overflow-y-auto px-6 py-4">
+                {transaction.status === "success" && <div className="flex items-center justify-center py-12">
+                    <h2>Your Payment was successful &#127881;</h2>
+                </div>}
+
+                {transaction.status !== "success" && <div className="flex-1 overflow-y-auto px-6 py-4">
                     <div className="flex flex-col h-full justify-between">
                         <div className="space-y-4">
                             <button className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition-colors">
@@ -80,7 +81,7 @@ export function PaymentGateway({
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>}
 
                 <div className="border-t border-gray-200 px-6 py-4 space-y-4">
                     <div className="flex items-center justify-between text-lg">
