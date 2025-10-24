@@ -1,7 +1,6 @@
 import { ASAP, useASAP } from '@asap-crypto/react-sdk';
 import { X, CreditCard } from 'lucide-react';
 import { useEffect } from 'react';
-import toast from 'react-hot-toast';
 
 interface PaymentGatewayProps {
   isOpen: boolean;
@@ -22,10 +21,9 @@ export function PaymentGateway({
 
     useEffect(() => {
         if(transaction.status === "success") {
-            toast.success("Transaction successful");
             setTimeout(() => {
                 onClearCart();
-            }, 5000);
+            }, 3000);
         }
     }, [transaction])
 
@@ -49,11 +47,15 @@ export function PaymentGateway({
                     </button>
                 </div>
 
-                {transaction.status === "success" && <div className="flex items-center justify-center py-12">
-                    <h2>Your Payment was successful &#127881;</h2>
+                {transaction.status === "success" && <div className="text-center py-32">
+                    <div className="flex items-center justify-center">
+                        <img src="https://i.imgur.com/e4V03Xc.png" alt="Checkmark" className="w-24 h-24" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900 mt-2">Your Payment was successful &#127881;</h2>
+                    <p className="text-gray-600 mt-2">We will process your order shortly.</p>
                 </div>}
 
-                {transaction.status !== "success" && <div className="flex-1 overflow-y-auto px-6 py-4">
+                {transaction.status === "success" && <div className="flex-1 overflow-y-auto px-6 py-4">
                     <div className="flex flex-col h-full justify-between">
                         <div className="space-y-4">
                             <button className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition-colors">
@@ -83,14 +85,14 @@ export function PaymentGateway({
                     </div>
                 </div>}
 
-                <div className="border-t border-gray-200 px-6 py-4 space-y-4">
+                {transaction.status !== "success" && <div className="border-t border-gray-200 px-6 py-4 space-y-4">
                     <div className="flex items-center justify-between text-lg">
                         <span className="font-semibold text-gray-900">Subtotal:</span>
                         <span className="font-bold text-2xl text-gray-900">
                             &#8358;{cartTotal.toFixed(2)}
                         </span>
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     );
